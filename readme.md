@@ -10,7 +10,7 @@ Extract the entities of a given URL using the NLP system from Google Cloud
 * Add dependencies `yarn` or `npm install`
 * Add your Google Cloud credentials in `./src/config/gcp.json`
 * Run through the command line: `node src/index.js <url> <css_selector>`
-* The output with your entities is in `./src/output/entities.csv`
+* The output with your entities will be in `./src/output/entities.csv`
 
 If you don't add a selector the whole body will be used (some words maybe appear weird because the parsing system to delete HTML is quite simple).
 
@@ -62,4 +62,26 @@ If you don't add a selector the whole body will be used (some words maybe appear
   actions: 0.009126781485974789,
   site: 0.001900155795738101,
   ...
+```
+
+## Bulk mode
+If instead of just extracting the entities for one URL you want to get the info of several ones you need to use the bulk mode. 
+
+### How to use Bulk mode
+
+* Download repo
+* Add dependencies `yarn` or `npm install`
+* Add your Google Cloud credentials in `./src/config/gcp.json`
+* Instead of passing the URL and the selector via terminal you need to add that info in this document: `./src/input/input.txt`
+* Run through the command line: `node src/bulk.js`
+* The output with your entities will be in `./src/output/entities.csv`
+
+#### Format of input
+Add every URL with its selector for every line. Separate both with commas. The selector is optional, if no selector is provided it will scrape the entire body.
+
+Example:
+```sh
+https://nachomascort.com/scraping-content-hijacking-the-endpoint-calls-in-the-front-end/,.post-container
+https://www.softonic.com/articulos/ahsoka-a-que-hora-se-estrena-la-nueva-serie-de-star-wars-en-disney-plus,article
+https://github.com/NachoSEO/simple-entity-extractor
 ```
