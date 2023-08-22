@@ -11,4 +11,8 @@ export default class FileRepository {
       }
     });
   }
+
+  readFile(filePath) {
+    return this.fs.readFileSync(filePath, 'utf8')
+  }
 }
