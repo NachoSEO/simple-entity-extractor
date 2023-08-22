@@ -1,0 +1,13 @@
+{
+  "name": "simple-entity-extractor",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Nacho Mascort <nacho.mascort@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@google-cloud/language": "^6.0.0",
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
